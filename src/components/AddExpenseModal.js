@@ -58,8 +58,9 @@ const AddExpenseModal = () => {
     };
 
     return (
-        <Modal
-            isOpen={isAddExpenseModalOpen}
+        <div
+            style={{ display: `${isAddExpenseModalOpen? 'block': 'none'}`}}
+            // isOpen={isAddExpenseModalOpen}
             onRequestClose={() => {
                 setIsAddExpenseModalOpen(false);
                 setFormData({
@@ -70,7 +71,7 @@ const AddExpenseModal = () => {
                 });
             }}
             className="modal"
-            overlayClassName="overlay"
+            // overlayClassName="overlay"
         >
             <div className="modal-content">
                 <h2>{editingExpense ? 'Edit Expense' : 'Add Expense'}</h2>
@@ -145,7 +146,7 @@ const AddExpenseModal = () => {
                     </div>
                 </form>
             </div>
-        </Modal>
+        </div>
     );
 };
 
